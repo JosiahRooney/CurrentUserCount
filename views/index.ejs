@@ -26,6 +26,8 @@
 			socket.on('server_response', (data) => {
 				// Update the total users connected number in real time
 				document.querySelector('#cur_users').textContent = data.response;
+				// Update the title too, to be fancy
+				document.title = data.response + " Users";
 			});
 		};
 	</script>
