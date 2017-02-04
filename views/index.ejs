@@ -12,19 +12,22 @@
 
 
 	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-    <script type ="text/javascript">
-    	// The function must run when the page is finished loading
-        window.onload = () => {
-        	// Create an instance of a socket for this client
-            var socket = io.connect();
-            // Send a signal to the server that a user connected
-            socket.emit('connected_user');
-            // Listen for the server response
-            socket.on('server_response', function (data){
-            	// Update the total users connected number in real time
-			    document.querySelector('#cur_users').textContent = data.response;
+	<script type ="text/javascript">
+		// The function must run when the page is finished loading
+		window.onload = () => {
+			
+			// Create an instance of a socket for this client
+			const socket = io.connect();
+			
+			// Send a signal to the server that a user connected
+			socket.emit('connected_user');
+
+			// Listen for the server response
+			socket.on('server_response', (data) => {
+				// Update the total users connected number in real time
+				document.querySelector('#cur_users').textContent = data.response;
 			});
-        };
-    </script>
+		};
+	</script>
 </body>
 </html>
