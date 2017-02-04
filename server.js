@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const port = process.env.PORT || 8000
 app.use(express.static(path.join(__dirname, "./static")));
 app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
@@ -12,8 +13,8 @@ app.get('/', (req, res) => {
 })
 
 // Set the server as a constant so that we can access it later
-const server = app.listen(8000, () => {
-	console.log("listening on port 8000");
+const server = app.listen(port, () => {
+	console.log("listening on port `${port}`");
 });
 
 // Instantiate socket.io on the server object
