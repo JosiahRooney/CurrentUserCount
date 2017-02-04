@@ -1,0 +1,18 @@
+{
+  "name": "CurrentUserCount",
+  "version": "0.1.0",
+  "description": "This is a quick little app to demonstrate a current user count on a website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Josiah Rooney",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "socket.io": "^1.7.2"
+  }
+}
